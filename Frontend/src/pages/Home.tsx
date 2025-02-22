@@ -22,7 +22,7 @@ const Home = () => {
    <Navbar/>
 
       {/* Main Content */}
-      <div className="flex flex-col gap-6 items-center w-full px-4 md:px-10">
+      <div className="flex flex-col pt-[10vh] gap-6 items-center w-full px-4 md:px-10">
         {/* Title */}
         <motion.p
           variants={fadeIn}

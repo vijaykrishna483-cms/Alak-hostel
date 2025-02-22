@@ -15,7 +15,7 @@ const Hero = () => {
     };
 
     return (
-        <div className='bg-[#0b0b0b] overflow-hidden pl-[6vw] flex flex-col justify-between gap-[1vh] pt-[6vh] text-[#fff] w-[100vw] h-[100vh]'>
+        <div className='bg-[#0b0b0b] overflow-hidden pl-[6vw] flex flex-col justify-between gap-[7vh] pt-[6vh]  text-[#fff] w-[100vw] h-full'>
             <div className='align-left text-left flex flex-col justify-left gap-[2vh] w-[80vw]'>
                 <motion.p variants={textVariant} initial="hidden" whileInView="visible" className='text-bold text-6xl font-bold w-[70vw]'>
                     <img src='ACHIEVE.png' alt='ACHIEVE' />
@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
             
             <motion.div variants={textVariant} initial="hidden" whileInView="visible" className='pr-[4vw] w-[80vw]'>
-                <p className='text-md'>
+                <p className='text-xl'>
                     "Alak Hostel is more than just a place to stay—it's a community where friendships grow, memories are made, and every day is an experience. From late-night conversations to shared celebrations, Alak offers a home-like atmosphere that fosters camaraderie, comfort, and unforgettable moments."
                 </p>
             </motion.div>

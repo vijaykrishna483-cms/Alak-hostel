@@ -33,7 +33,7 @@ const Complaints = () => {
 
   return (
     <motion.div
-      className="bg-[#fff] overflow-hidden w-[100vw] pt-[1vh] flex flex-col justify-between h-[100vh]"
+      className="bg-[#fff]  overflow-hidden w-[100vw]  flex flex-col justify-between h-[100vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -42,8 +42,8 @@ const Complaints = () => {
       <Navbar />
 
       {/* Title Section */}
-      <motion.div className="px-[5vw]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-        <p className="text-3xl font-bold">REGISTER <br /> COMPLAINTS</p>
+      <motion.div className="px-[5vw] pt-[15vh]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <p className="text-5xl font-bold">REGISTER <br /> COMPLAINTS</p>
         <p className="font-light">Register your complaint here...!!</p>
       </motion.div>
 
@@ -64,6 +64,8 @@ const Complaints = () => {
             visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
           }}
         >
+                  <p className="font-light text-white text-2xl">Fill this Form...!!</p>
+
           {(["name", "email", "roomNo"] as (keyof typeof formData)[]).map((field, index) => (
             <motion.input
               key={index}
@@ -72,7 +74,7 @@ const Complaints = () => {
               placeholder={field.replace(/([A-Z])/g, " $1").trim()}
               value={formData[field]}
               onChange={handleChange}
-              className="w-[120%] border-b-2 border-red-100 mb-2 p-2 rounded-lg text-white bg-black"
+              className="w-[90vw] border-b-2 border-red-100 mb-2 p-2 rounded-lg text-white bg-black"
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             />
           ))}
@@ -80,7 +82,7 @@ const Complaints = () => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="w-[120%] border-b-2 border-red-100 bg-black mb-2 p-2 rounded-lg text-white"
+            className="w-[90vw] border-b-2 border-red-100 bg-black mb-2 p-2 rounded-lg text-white"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           >
             <option value="">Issue Category</option>
@@ -93,12 +95,12 @@ const Complaints = () => {
             placeholder="Describe your issue"
             value={formData.description}
             onChange={handleChange}
-            className="w-[120%] border-b-2 border-red-100 mb-2 p-2 rounded-lg text-white bg-black"
+            className="w-[90vw] border-b-2 border-red-100 mb-2 p-2 rounded-lg text-white bg-black"
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           ></motion.textarea>
           <motion.button
             type="submit"
-            className="bg-[#fff] text-black px-[4vw] py-[1vh] rounded-lg"
+            className="bg-[#fff] text-black text-2xl px-[4vw] py-[1vh] rounded-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

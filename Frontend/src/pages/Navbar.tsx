@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative w-[100vw]">
+    <div className="fixed  w-[100vw] px-[4vw]">
       {/* Navbar */}
     <div className="w-full flex  justify-between  align-middle items- py-5 px-[5vw] ">
            {/* Menu Button */}
