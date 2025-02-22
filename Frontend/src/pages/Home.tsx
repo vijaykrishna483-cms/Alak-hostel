@@ -1,15 +1,11 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import './Hero.css'
 import Navbar from "./Navbar";
 const Home = () => {
-  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleMenuClick = () => {
-    setOpen((prevState) => !prevState);
-  };
+ 
 
   const Gotocomplaints = () => {
     navigate("/complaintregister");

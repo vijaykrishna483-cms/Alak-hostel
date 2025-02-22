@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 
 const Complaints = () => {
-  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,18 +10,17 @@ const Complaints = () => {
     category: "",
     description: "",
   });
+
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleClick = () => {
-    setOpen((prevState) => !prevState);
-  };
-  const handleChange = (e) => {
+
+
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    // Simulate form submission
     console.log("Complaint submitted:", formData);
 
     // Clear input fields
@@ -30,18 +28,19 @@ const Complaints = () => {
 
     // Show popup
     setShowPopup(true);
-    setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
+    setTimeout(() => setShowPopup(false), 3000);
   };
 
   return (
     <motion.div
-      className="bg-[#fff] overflow-hidden  w-[100vw] pt-[1vh] flex flex-col justify-between h-[100vh]"
+      className="bg-[#fff] overflow-hidden w-[100vw] pt-[1vh] flex flex-col justify-between h-[100vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       {/* Navbar */}
-<Navbar/>
+      <Navbar />
+
       {/* Title Section */}
       <motion.div className="px-[5vw]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <p className="text-3xl font-bold">REGISTER <br /> COMPLAINTS</p>
@@ -65,7 +64,7 @@ const Complaints = () => {
             visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
           }}
         >
-          {["name", "email", "roomNo"].map((field, index) => (
+          {(["name", "email", "roomNo"] as (keyof typeof formData)[]).map((field, index) => (
             <motion.input
               key={index}
               type={field === "email" ? "email" : "text"}

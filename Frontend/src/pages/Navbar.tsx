@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
 import './Hero.css'
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
+import { useState } from "react";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
